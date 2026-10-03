@@ -9,7 +9,7 @@
 
 **Complete hybrid AD + M365 employee offboarding automation — one script, six steps, full audit trail.**
 
-[**→ Get OffboardPilot on Gumroad ($39)**](https://lewbeast.gumroad.com/l/hcvsr)
+[**→ Get OffboardPilot on Gumroad ($39)**](https://lewbeast.gumroad.com/l/offboardpilot)
 
 </div>
 
@@ -44,13 +44,13 @@ After all six steps, a **color-coded reconciliation report** shows pass/fail sta
 
 ## Built for real hybrid environments
 
-- No hardcoded values, works in any environment out of the box
-- Handles users with no EXO mailbox, EXO steps skip gracefully, AD steps continue
-- Mailbox size pre-check, warns before conversion if mailbox exceeds 50GB shared quota
-- EXO group membership uses Distinguished Name, prevents silent misses after license removal
-- AD operations use explicit admin credentials, supports least-privilege technician accounts
-- Modules auto-install on first run if missing
-- Full session transcript logged automatically
+- ✅ No hardcoded values — works in any environment out of the box
+- ✅ Handles users with no EXO mailbox — EXO steps skip gracefully, AD steps continue
+- ✅ Mailbox size pre-check — warns before conversion if mailbox exceeds 50GB shared quota
+- ✅ EXO group membership uses Distinguished Name — prevents silent misses after license removal
+- ✅ AD operations use explicit admin credentials — supports least-privilege technician accounts
+- ✅ Modules auto-install on first run if missing
+- ✅ Full session transcript logged automatically
 
 ---
 
@@ -59,19 +59,19 @@ After all six steps, a **color-coded reconciliation report** shows pass/fail sta
 | File | Purpose |
 |------|---------|
 | `Invoke-UserOffboard.ps1` | Main offboarding engine |
-| `Get-EXOGroupMembership.ps1` | Diagnostic utility, audit EXO group memberships before/after |
+| `Get-EXOGroupMembership.ps1` | Diagnostic utility — audit EXO group memberships before/after |
 | `Reset-TestAccount.ps1` | Reset a test account to clean state for lab re-runs |
 
 ---
 
 ## Requirements
 
-- PowerShell 5.1 (recommended), PS7 compatible via RSAT shim
+- PowerShell 5.1 (recommended) — PS7 compatible via RSAT shim
 - RSAT Active Directory module
 - ExchangeOnlineManagement module
 - Microsoft.Graph.Authentication module
 - Domain-connected Windows workstation
-- AD admin credentials plus Exchange Online and M365 admin credentials
+- AD admin credentials + Exchange Online / M365 admin credentials
 
 All required modules are checked at startup and auto-installed if missing.
 
@@ -83,7 +83,7 @@ Full, commented PowerShell source. No compiled executables, no obfuscation.
 
 <div align="center">
 
-[**Purchase on Gumroad, $39 one-time**](https://lewbeast.gumroad.com/l/hcvsr)
+[**→ Purchase on Gumroad — $39 one-time**](https://lewbeast.gumroad.com/l/offboardpilot)
 
 </div>
 
@@ -91,8 +91,6 @@ Full, commented PowerShell source. No compiled executables, no obfuscation.
 
 ## About
 
-**Randall Lewis** - Senior Infrastructure Solutions Engineer
-
-**Beyond Automation** - Engineering Smarter IT Operations
-
+**Randall Lewis** — Senior Infrastructure Solutions Engineer  
+**Beyond Automation** — Engineering Smarter IT Operations  
 [beyondautomation.io](https://beyondautomation.io)
