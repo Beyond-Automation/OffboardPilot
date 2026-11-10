@@ -1,0 +1,14 @@
+# Transcript logs — never commit run logs
+C:\Scripts\Logs\
+*.txt
+
+# PowerShell temp files
+*.ps1xml
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor artifacts
+.vscode/
+*.bak
