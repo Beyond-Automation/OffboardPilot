@@ -1,3 +1,9 @@
+﻿<div align="center">
+
+![OffboardPilot](assets/offboardpilot-banner.png)
+
+</div>
+
 <div align="center">
 
 <img src="https://img.shields.io/badge/PowerShell-5.1%2B-blue?style=flat-square&logo=powershell" />
@@ -7,7 +13,7 @@
 
 # OffboardPilot
 
-**Complete hybrid AD + M365 employee offboarding automation — one script, six steps, full audit trail.**
+**Complete hybrid AD + M365 employee offboarding automation â€” one script, six steps, full audit trail.**
 
 *By [Beyond Automation](https://beyondautomation.io)*
 
@@ -19,7 +25,7 @@
 
 Every time an employee leaves, the same checklist runs through your head. Miss one step and the audit finds it later.
 
-There is also a silent bug in most offboarding scripts: when you remove a user's M365 license, Exchange Online reverts their primary email address from `user@yourdomain.com` back to `user@tenant.onmicrosoft.com`. Any script that filters distribution group memberships by email address — and most do — runs after the license removal, hits the wrong address, finds nothing, and reports success.
+There is also a silent bug in most offboarding scripts: when you remove a user's M365 license, Exchange Online reverts their primary email address from `user@yourdomain.com` back to `user@tenant.onmicrosoft.com`. Any script that filters distribution group memberships by email address â€” and most do â€” runs after the license removal, hits the wrong address, finds nothing, and reports success.
 
 **The user is still in every cloud distribution list they were ever added to.**
 
@@ -47,7 +53,7 @@ After all six steps, a **color-coded reconciliation report** shows pass/fail sta
 | File | Purpose |
 |------|---------|
 | `Invoke-UserOffboard.ps1` | Main offboarding engine |
-| `Get-EXOGroupMembership.ps1` | Diagnostic — audit a user's EXO group memberships before or after offboarding |
+| `Get-EXOGroupMembership.ps1` | Diagnostic â€” audit a user's EXO group memberships before or after offboarding |
 | `Reset-TestAccount.ps1` | Reset a test account back to active state for lab re-runs |
 
 ---
@@ -71,9 +77,9 @@ Required PowerShell modules (`ActiveDirectory`, `ExchangeOnlineManagement`, `Mic
 
 The full six-step pipeline runs. At the configuration prompt you choose:
 
-- **No forwarding** — mailbox is converted to Shared and licenses are removed
-- **Forwarding only** — mailbox converts to Shared, mail forwards to a recipient, licenses are removed
-- **Forwarding + member access** — same as above, plus the forwarding recipient is granted Full Access to the mailbox in Outlook
+- **No forwarding** â€” mailbox is converted to Shared and licenses are removed
+- **Forwarding only** â€” mailbox converts to Shared, mail forwards to a recipient, licenses are removed
+- **Forwarding + member access** â€” same as above, plus the forwarding recipient is granted Full Access to the mailbox in Outlook
 
 If the mailbox is over 50 GB, the script warns you before proceeding and offers three options: convert and accept the quota risk, apply forwarding only and retain the license, or skip the mailbox step for manual handling.
 
@@ -90,12 +96,12 @@ This lab guide uses fictional users and a test domain. No production accounts ar
 ### What you need
 
 - A Windows Server VM running Active Directory (domain controller)
-- Three test users in AD — for example: `jordan.reed`, `morgan.ellis`, `taylor.brooks`
-- An M365 trial tenant with Exchange Online (optional — needed to test the mailbox path)
+- Three test users in AD â€” for example: `jordan.reed`, `morgan.ellis`, `taylor.brooks`
+- An M365 trial tenant with Exchange Online (optional â€” needed to test the mailbox path)
 - Entra ID Cloud Sync or AD Connect configured if testing the hybrid path
 - RSAT installed on the machine where you run the scripts
 
-### Test path 1 — synced user with a mailbox
+### Test path 1 â€” synced user with a mailbox
 
 1. Confirm the test user has an Exchange Online mailbox and is synced from AD.
 2. Run `Get-EXOGroupMembership.ps1` and record the user's cloud group memberships. This is your before state.
@@ -108,7 +114,7 @@ This lab guide uses fictional users and a test domain. No production accounts ar
    - Cloud group memberships are cleared (run `Get-EXOGroupMembership.ps1` again)
 5. Run `Reset-TestAccount.ps1` to restore the test user for another run.
 
-### Test path 2 — AD-only user with no mailbox
+### Test path 2 â€” AD-only user with no mailbox
 
 1. Create a test user in AD with no M365 account or Exchange Online mailbox.
 2. Add the user to at least one AD security group.
@@ -127,9 +133,9 @@ This lab guide uses fictional users and a test domain. No production accounts ar
 
 The reconciliation report at the end of each run shows color-coded status for every step:
 
-- **Green** — Completed successfully
-- **Yellow** — Skipped (by design or technician choice) or partial completion
-- **Red** — Failed (check the transcript for the error)
+- **Green** â€” Completed successfully
+- **Yellow** â€” Skipped (by design or technician choice) or partial completion
+- **Red** â€” Failed (check the transcript for the error)
 
 Every run writes a transcript to `C:\Scripts\Logs\Offboard_<email>_<date>.txt`. Review this file to confirm what ran and catch any step-level errors.
 
@@ -148,4 +154,5 @@ The lab guide above is designed so you can contribute without a production envir
 Built by [Randall Lewis](https://beyondautomation.io), Senior Infrastructure Solutions Engineer.  
 Part of the [Beyond Automation](https://beyondautomation.io) open-source toolkit for Windows IT infrastructure.
 
-MIT License — see [LICENSE](LICENSE).
+MIT License â€” see [LICENSE](LICENSE).
+
